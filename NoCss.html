@@ -1,0 +1,31 @@
+<h1 id="assignment-3">Assignment 3</h1>
+<h2 id="personal-solution">Personal Solution</h2>
+<p>[allowframebreaks]</p>
+<h3 id="answer-a">Answer A</h3>
+<p>In this question, <span class="math inline"><em>I</em><em>n</em><em>f</em><em>l</em></span> is the annualized percentage difference of inflation. The difference between current period logarithmic price index for personal consumption expenditures and last period logarithmic price index, the result times 400 is <span class="math inline"><em>I</em><em>n</em><em>f</em><em>l</em></span>. <span class="math inline"><em>I</em><em>n</em><em>f</em><em>l</em></span> is measured percentage per quarter, that is, logarithmic price index change one percentage in a quarter, <span class="math inline"><em>I</em><em>n</em><em>f</em><em>l</em></span> changes 400 percentage points.</p>
+<p>Plot the value of <span class="math inline"><em>I</em><em>n</em><em>f</em><em>l</em></span> from 1963: Q1 through 2012: Q4 following.</p>
+<p>Based on the plot, <span class="math inline"><em>I</em><em>n</em><em>f</em><em>l</em></span> has a stochastic trend since trend is random and varies over time.</p>
+<p>[allowframebreaks]</p>
+<h3 id="answer-b">Answer B</h3>
+<p>Compute the first four autocorrelations of <span class="math inline">∆<em>I</em><em>n</em><em>f</em><em>l</em></span>, we get following:</p>
+<p>The plot looks “choppy” and “jagged”. In part (i), we calculated the first autocorrelation of <span class="math inline"><em>I</em><em>n</em><em>f</em><em>l</em></span>, the difference become more usual and changes each period, that is why the plot looks “choppy” and “jagged”.</p>
+<p>[allowframebreaks]</p>
+<h3 id="answer-c">Answer C</h3>
+<p>The regression of <span class="math inline">∆<em>I</em><em>n</em><em>f</em><em>l</em><sub><em>t</em></sub></span> on <span class="math inline">∆<em>I</em><em>n</em><em>f</em><em>l</em><sub><em>t</em> − 1</sub>:</span></p>
+<p>Since we already known <br /><span class="math display"><em>Δ</em><em>I</em><em>n</em><em>f</em><em>l</em><sub><em>t</em></sub> = <em>β</em><sub>0</sub> + <em>β</em><sub>1</sub><em>Δ</em><em>I</em><em>n</em><em>f</em><em>l</em><sub><em>t</em>–1</sub> + <em>u</em><sub><em>t</em></sub>, <em>β</em><sub>0</sub> = −0.0029, <em>β</em><sub>1</sub> = −0.2531,</span><br /> that is <br /><span class="math display"><em>Δ</em><em>I</em><em>n</em><em>f</em><em>l</em><sub><em>t</em></sub> = −0.0029 − 0.2531<em>Δ</em><em>I</em><em>n</em><em>f</em><em>l</em><sub><em>t</em>–1</sub>.</span><br /> According to constant and coefficient, we could predict the change in inflation next quarter, that is, <br /><span class="math display"><em>Δ</em><em>I</em><em>n</em><em>f</em><em>l</em><sub><em>t</em> + 1</sub> = −0.0029 − 0.2531<em>Δ</em><em>I</em><em>n</em><em>f</em><em>l</em><sub><em>t</em></sub>.</span><br /></p>
+<p>Estimate an AR(2) model for <span class="math inline">∆<em>I</em><em>n</em><em>f</em><em>l</em>:</span></p>
+<p>Compare with estimate results in part (i) and part (ii), all lag variables are statistic significant and Adjusted R squared is increased from 0.0593 to 0.1205, so the AR(2) model is better than an AR(1) model. Since the <span class="math inline">∆<em>I</em><em>n</em><em>f</em><em>l</em></span> may be influenced by last two periods, adding one more lag variable might increase explanation of the model.</p>
+<p>Estimate an AR(p) model for <span class="math inline"><em>p</em> = 0, …, 8:</span></p>
+<p>In general, “smaller is better”. In this case, lag length is 2 when chosen by AIC, lag length is 2 when chosen by BIC.</p>
+<p>We know the AR(2) model is <br /><span class="math display"><em>Δ</em><em>I</em><em>n</em><em>f</em><em>l</em><sub><em>t</em></sub> = −0.011 − 0.3537<em>Δ</em><em>I</em><em>n</em><em>f</em><em>l</em><sub><em>t</em>–1</sub> − 0.2439<em>Δ</em><em>I</em><em>n</em><em>f</em><em>l</em><sub><em>t</em>–2</sub>.</span><br /> So <br /><span class="math display">$$\begin{aligned}
+            ΔInfl_{2013:Q1} ={}&amp; -0.011- 0.3537ΔInfl_{2012:Q4} - 0.2439ΔInfl_{2012:Q3}\Rightarrow\\
+            &amp;ΔInfl_{2013:Q1} = -0.011- 0.3537×-0.0595 - 0.2439×-0.6153\Rightarrow ΔInfl_{2013:Q1}=0.1601
+            \end{aligned}$$</span><br /></p>
+<p>The AR(2) model is <br /><span class="math display"><em>I</em><em>n</em><em>f</em><em>l</em><sub><em>t</em></sub> = 0.4992 + 0.6766<em>I</em><em>n</em><em>f</em><em>l</em><sub><em>t</em>–1</sub> + 0.1837<em>I</em><em>n</em><em>f</em><em>l</em><sub><em>t</em>–2</sub>.</span><br /> So <br /><span class="math display">$$\begin{aligned}
+            Infl_{2013:Q1} ={}&amp; 0.4992+ 0.6766Infl_{2012:Q4} + 0.1837Infl_{2012:Q3}\Rightarrow\\
+            &amp;ΔInfl_{2013:Q1} = 0.4992+ 0.6766×1.6127 + 0.1837×1.6722\Rightarrow Infl_{2013:Q1}=1.8975
+            \end{aligned}$$</span><br /></p>
+<p>[allowframebreaks]</p>
+<h3 id="answer-d">Answer D</h3>
+<p><span class="math inline"><em>H</em><sub>0</sub> : <em>δ</em> = 0</span> vs. <span class="math inline"><em>H</em><sub>1</sub> : <em>δ</em> &lt; 0</span> with two lags of <span class="math inline"><em>Δ</em><em>I</em><em>n</em><em>f</em><em>l</em></span></p>
+<p>Estimate <span class="math inline"><em>Δ</em><em>I</em><em>n</em><em>f</em><em>l</em> = <em>β</em><sub>0</sub> + <em>δ</em><em>I</em><em>n</em><em>f</em><em>l</em><sub><em>t</em>–1</sub> + <em>γ</em><sub>1</sub><em>Δ</em><em>I</em><em>n</em><em>f</em><em>l</em><sub><em>t</em>–1</sub> + <em>γ</em><sub>2</sub><em>Δ</em><em>I</em><em>n</em><em>f</em><em>l</em><sub><em>t</em>–2</sub> + <em>u</em><sub><em>t</em></sub></span></p>
