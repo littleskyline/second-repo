@@ -1,0 +1,124 @@
+\documentclass{beamer}
+\usepackage[bars]{beamerthemetree}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usetheme{Warsaw}
+\usecolortheme{whale}
+\title{Econometric 2}
+\author{Yi Huang(Anr:353686)}
+\institute{Tilburg University}
+\date{\today}
+\transdissolve<5>
+\begin{document}
+	\section{Assignment 3}
+	\subsection{Personal Solution}
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	\begin{frame}[allowframebreaks]
+		\frametitle{Answer A}
+		\structure{A.i.}
+		
+		In this question, $Infl$ is the annualized percentage difference of inflation. The difference between current period logarithmic price index for personal consumption expenditures and last period logarithmic price index, the result times 400 is $Infl$. $Infl$ is measured percentage per quarter, that is, logarithmic price index change one percentage in a quarter, $Infl$ changes 400 percentage points.
+		\vspace{11pt}
+		
+		\structure{A.ii.}
+		
+		Plot the value of $Infl$ from 1963: Q1 through 2012: Q4 following.
+		
+		Based on the plot, $Infl$ has a stochastic trend since trend is random and varies over time.
+		\pause 
+		
+		\includegraphics[width = .8\textwidth]{Graph1.png}
+	\end{frame}
+	\begin{frame}[allowframebreaks]
+		\frametitle{Answer B}
+			\structure{B.i.}
+			
+			Compute the first four autocorrelations of $∆Infl$, we get following:
+			\vspace{11pt}
+			
+			\includegraphics[width = 1\textwidth]{Graph2.png}
+			\vspace{6pt}
+			
+			\structure{B.ii.}
+			
+			The plot looks “choppy” and “jagged”.
+			In part (i), we calculated the first autocorrelation of $Infl$, the difference become more usual and changes each period, that is why the plot looks “choppy” and “jagged”.
+			\pause
+			
+			\includegraphics[width = .8\textwidth]{Graph3.png}
+			
+
+	\end{frame}
+	\begin{frame}[allowframebreaks]
+		\frametitle{Answer C}
+			\structure{C.i.}
+			
+			The regression of $∆Infl_t$ on $∆Infl_{t-1}:$
+			\pause
+			
+			\includegraphics[width = .8\textwidth]{Graph4.png}
+			
+			Since we already known 
+			\[ΔInfl_t = β_0 + β_1ΔInfl_{t–1} + u_t, β_0 =-0.0029, β_1 =-0.2531,\] that is 
+			\[ΔInfl_t = -0.0029- 0.2531ΔInfl_{t–1}.\] 
+			According to constant and coefficient, we could predict the change in inflation next quarter, that is, 
+			\[ΔInfl_{t+1} = -0.0029- 0.2531ΔInfl_t.\]
+			\vspace{11pt}
+			
+			\structure{C.ii.}
+			
+			Estimate an AR(2) model for $∆Infl:$
+			\pause
+			
+			\includegraphics[width = 1.0 \textwidth]{Graph5.png}
+			
+			Compare with estimate results in part (i) and part (ii), all lag variables are statistic significant and Adjusted R squared is increased from 0.0593 to 0.1205, so the AR(2) model is better than an AR(1) model.
+			Since the $∆Infl$ may be influenced by last two periods, adding one more lag variable might increase explanation of the model.
+			\vspace{11pt}
+			
+			\structure{C.iii.}
+			
+			Estimate an AR(p) model for $p=0,…,8:$
+			\pause
+			
+			\includegraphics[width = .8\textwidth]{Graph6.png}
+			
+			In general, “smaller is better”. In this case, lag length is 2 when chosen by AIC, lag length is 2 when chosen by BIC.
+			\vspace{11pt}
+			
+			\structure{C.iv.}
+			
+			We know the AR(2) model is 
+			\[ΔInfl_t = -0.011- 0.3537ΔInfl_{t–1} - 0.2439ΔInfl_{t–2}.\]
+			So
+			\[\begin{aligned}
+			ΔInfl_{2013:Q1} ={}& -0.011- 0.3537ΔInfl_{2012:Q4} - 0.2439ΔInfl_{2012:Q3}\Rightarrow\\
+			&ΔInfl_{2013:Q1} = -0.011- 0.3537×-0.0595 - 0.2439×-0.6153\Rightarrow ΔInfl_{2013:Q1}=0.1601
+			\end{aligned}\]
+			\vspace{11pt}
+			
+			\structure{C.v.}
+			
+			The AR(2) model is 
+			\[Infl_t = 0.4992+ 0.6766Infl_{t–1} + 0.1837Infl_{t–2}.\]
+			So 
+			\[\begin{aligned}
+			Infl_{2013:Q1} ={}& 0.4992+ 0.6766Infl_{2012:Q4} + 0.1837Infl_{2012:Q3}\Rightarrow\\
+			&ΔInfl_{2013:Q1} = 0.4992+ 0.6766×1.6127 + 0.1837×1.6722\Rightarrow Infl_{2013:Q1}=1.8975
+			\end{aligned}\]
+	\end{frame}
+	\begin{frame}[allowframebreaks]
+		\frametitle{Answer D}
+		\structure{D.i.}
+		
+		$H_0: δ = 0$ vs. $H_1: δ < 0$ with two lags of $ΔInfl$
+		
+		Estimate $ΔInfl= β_0 + δInfl_{t–1} + γ_1ΔInfl_{t–1} + γ_2ΔInfl_{t–2} +u_t$
+		
+		\includegraphics[width = .8\textwidth]{Graph7.PNG}
+
+	\end{frame}
+
+\end{document}
